@@ -44,13 +44,13 @@ export default new Router({
                     // markdown组件
                     path: '/markdown',
                     component: resolve => require(['../components/page/Markdown.vue'], resolve),
-                    meta: { title: 'markdown编辑器' }    
+                    meta: { title: 'markdown编辑器' }
                 },
                 {
                     // 图片上传组件
                     path: '/upload',
                     component: resolve => require(['../components/page/Upload.vue'], resolve),
-                    meta: { title: '文件上传' }   
+                    meta: { title: '文件上传' }
                 },
                 {
                     // vue-schart组件
@@ -69,6 +69,17 @@ export default new Router({
                     path: '/permission',
                     component: resolve => require(['../components/page/Permission.vue'], resolve),
                     meta: { title: '权限测试', permission: true }
+                },{
+                    path: '/investList',
+                    component: resolve => require(['../components/page/investList.vue'], resolve), //投资列表
+                },
+                {
+                    path: '/platformList',
+                    component: resolve => require(['../components/page/PlatformList.vue'], resolve), //平台列表
+                },
+                {
+                    path: '/createInvest',
+                    component: resolve => require(['../components/page/CreateInvest.vue'], resolve), //新建投资计划
                 }
             ]
         },

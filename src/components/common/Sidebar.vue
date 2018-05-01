@@ -38,7 +38,17 @@
                     {
                         icon: 'el-icon-tickets',
                         index: 'table',
-                        title: '基础表格'
+                        title: '投资管理',
+                        subs: [
+                            {
+                                index: 'investList',
+                                title: '投资列表'
+                            },
+                            {
+                                index: 'platformList',
+                                title: '理财平台'
+                            },
+                        ]
                     },
                     {
                         icon: 'el-icon-message',

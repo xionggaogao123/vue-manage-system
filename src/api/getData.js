@@ -20,4 +20,8 @@ export const platformAllList =(params) => {
     return axios.get(`${host}/admin/platform/list-all`);
 };
 
+export const createInvest =(params) => {
+  return axios.post(`${host}/admin/invest/create`, params);
+};
+
 

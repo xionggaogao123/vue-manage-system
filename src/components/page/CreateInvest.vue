@@ -27,7 +27,7 @@
                     天
                 </el-form-item>
 
-                <el-form-item label="时间范围">
+                <el-form-item label="计息时间">
                     <el-col :span="11">
                         <el-date-picker type="date" placeholder="计息时间" v-model="form.startTime"
                                         style="width: 100%;"></el-date-picker>
@@ -93,7 +93,14 @@
             },
 
             createInvest(form) {
-                createInvest(form).then((res) => {
+                let newForm ={
+                    money: form.money * 100,
+                    expectedIncome: form.expectedIncome * 100,
+                    platformId: form.platformId,
+                    day: form.day,
+                    startTime: form.startTime
+                };
+                createInvest(newForm).then((res) => {
                     console.log(res);
                     if (res.data) {
                         const self = this;

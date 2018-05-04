@@ -24,4 +24,7 @@ export const createInvest =(params) => {
   return axios.post(`${host}/admin/invest/create`, params);
 };
 
+export const  createPlatform =(params) => {
+  return axios.post(`${host}/admin/platform/create`, params);
+};
 

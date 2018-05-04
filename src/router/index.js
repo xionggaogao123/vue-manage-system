@@ -80,6 +80,9 @@ export default new Router({
                 {
                     path: '/createInvest',
                     component: resolve => require(['../components/page/CreateInvest.vue'], resolve), //新建投资计划
+                },{
+                    path: '/createPlatform',
+                    component: resolve => require(['../components/page/CreatePlatform.vue'], resolve), //新建投资计划
                 }
             ]
         },

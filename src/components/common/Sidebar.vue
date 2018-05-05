@@ -47,7 +47,10 @@
                             {
                                 index: 'platformList',
                                 title: '理财平台'
-                            },
+                            },{
+                                index: 'consumeList',
+                                title: `消费`
+                            }
                         ]
                     },
                     {

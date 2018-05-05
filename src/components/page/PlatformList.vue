@@ -8,7 +8,7 @@
         </div>
 
         <div class="handle-box">
-            <el-button type="primary" icon="add" @click="handleAddInvest()">数据</el-button>
+            <el-button type="primary" icon="add" @click="getEachMontyConsumeData()">每月收入数据</el-button>
             <el-button type="primary" icon="add" @click="createPlatform()">新增理财平台</el-button>
         </div>
 
@@ -23,8 +23,8 @@
             <el-table-column prop="incomeReturn" label="日收益率" width="90"></el-table-column>
             <el-table-column label="操作" width="302" prop="id">
                 <template scope="scope">
-                    <el-button size="small"  @click="handleDelete(scope.row.id)">添加昨日收益</el-button>
-                    <el-button size="small"  @click="handleDelete(scope.row.id)">编辑</el-button>
+                    <el-button size="small"  @click="addIncome(scope.row.id)">添加昨日收益</el-button>
+                    <el-button size="small"  @click="handleEditPlatform(scope.row.id, scope.$index, scope.row)">编辑</el-button>
                     <el-button size="small" type="danger" @click="handleDelete(scope.row.id)">删除</el-button>
 
                 </template>
@@ -92,13 +92,13 @@
                     status: self.status
                 };
                 platformList(params).then((res) => {
-                    console.log(res.data);
                     res.data.result.data.forEach(function (element) {
                         element.incomeReturn = element.incomeReturn / 100 + "%";
                         element.monthReturn = element.monthReturn / 100 + "%";
                         element.dayReturn = element.dayReturn / 100 + "%";
                         element.status = enumStatus[element.status];
                         element.createTime = new Date(element.createTime).toLocaleString();
+                        element.yesterdayIncome = element.yesterdayIncome / 100 + "元";
                         element.totalMoney = element.totalMoney / 100 + "元";
                     });
                     self.tableData = res.data.result.data;
@@ -110,15 +110,24 @@
                 const self = this;
                 self.$router.push({path: '/createPlatform'})
             },
-            handleEdit(taskId, index, row) {
+            addIncome(id) {
+                const  self = this;
+                console.log(id);
+                self.$router.push({path: '/createIncome', query: {platformId: id}});
+            },
+            handleEditPlatform(id){
                 const self = this;
-                self.$router.push({path: '/taskedit', query: {taskId: taskId}});
+                self.$router.push({path: '/updatePlatform', query: {id: id}});
             },
             handleDelete(taskid) {
                 deleteTask(taskid).then((res) => {
                     console.log(res);
                     this.getPlatformListData();
                 });
+            },
+            getEachMontyConsumeData() {
+                const self = this;
+                self.$router.push( '/platformData');
             },
             handleCurrentChange(val) {
                 this.cur_page = val;
@@ -133,10 +142,5 @@
     .handle-box {
         margin-bottom: 20px;
         float: right;
-    }
-
-    .handle-box-search {
-        margin-bottom: 20px;
-        float: left;
     }
 </style>

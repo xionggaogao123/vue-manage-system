@@ -83,6 +83,24 @@ export default new Router({
                 },{
                     path: '/createPlatform',
                     component: resolve => require(['../components/page/CreatePlatform.vue'], resolve), //新建投资计划
+                },{
+                    path: '/createIncome',
+                    component: resolve => require(['../components/page/CreateIncome.vue'], resolve), //添加平台收益
+                },{
+                    path: '/updatePlatform',
+                    component: resolve => require(['../components/page/PlatformEdit.vue'], resolve), //添加平台收益
+                },{
+                    path: '/platformData',
+                    component: resolve => require(['../components/page/PlatformData.vue'], resolve), //数据
+                },{
+                    path: '/consumeList',
+                    component: resolve => require(['../components/page/ConsumeList.vue'], resolve), //数据
+                },{
+                    path: '/createConsume',
+                    component: resolve => require(['../components/page/CreateConsume.vue'], resolve), //新增消费
+                },{
+                    path: '/eachMonthConsume',
+                    component: resolve => require(['../components/page/EachMonthConsumeList.vue'], resolve), //新增消费
                 }
             ]
         },

@@ -28,3 +28,30 @@ export const  createPlatform =(params) => {
   return axios.post(`${host}/admin/platform/create`, params);
 };
 
+export const  findPlatform =(params) => {
+    return axios.get(`${host}/admin/platform/find-by-id?id=`+params.id);
+};
+
+export const  updatePlatform =(params) => {
+  return axios.post(`${host}/admin/platform/update`, params);
+};
+
+export const countTotalMoney =() => {
+    return axios.get(`${host}/admin/count/total-money`);
+};
+
+export const  createIncome =(params) => {
+  return axios.post(`${host}/admin/record/income`, params);
+};
+
+export const createConsume =(params) => {
+  return axios.post(`${host}/admin/record/consume`, params);
+};
+
+export const  consumeList =(params) => {
+  return axios.get(`${host}/admin/consume/list`, params);
+};
+
+export  const  eachMonthConsumeList =() => {
+  return axios.get(`${host}/admin/count/pre-monty-consume`);
+};

@@ -54,32 +54,20 @@
                         ]
                     },
                     {
+                        icon: 'el-icon-date',
+                        index: 'table',
+                        title: '人脉管理',
+                        subs: [
+                            {
+                                index: 'friendList',
+                                title: '好友列表'
+                            }
+                        ]
+                    },
+                    {
                         icon: 'el-icon-message',
                         index: 'tabs',
                         title: 'tab选项卡'
-                    },
-                    {
-                        icon: 'el-icon-date',
-                        index: '3',
-                        title: '表单相关',
-                        subs: [
-                            {
-                                index: 'form',
-                                title: '基本表单'
-                            },
-                            {
-                                index: 'editor',
-                                title: '富文本编辑器'
-                            },
-                            {
-                                index: 'markdown',
-                                title: 'markdown编辑器'
-                            },
-                            {
-                                index: 'upload',
-                                title: '文件上传'
-                            }
-                        ]
                     },
                     {
                         icon: 'el-icon-star-on',

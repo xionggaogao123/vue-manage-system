@@ -55,3 +55,11 @@ export const  consumeList =(params) => {
 export  const  eachMonthConsumeList =() => {
   return axios.get(`${host}/admin/count/pre-monty-consume`);
 };
+
+export const  userList =(params) => {
+    return axios.get(`${host}/admin/user/paging`, params);
+};
+
+export  const  createUser =(params) => {
+  return axios.post(`${host}/admin/user/add`, params);
+};

@@ -101,6 +101,12 @@ export default new Router({
                 },{
                     path: '/eachMonthConsume',
                     component: resolve => require(['../components/page/EachMonthConsumeList.vue'], resolve), //新增消费
+                },{
+                    path: '/friendList',
+                    component: resolve => require(['../components/page/FriendList.vue'], resolve), //新增消费
+                },{
+                    path: '/createUser',
+                    component: resolve => require(['../components/page/CreateUser.vue'], resolve), //新增联系人
                 }
             ]
         },

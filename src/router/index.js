@@ -103,7 +103,7 @@ export default new Router({
                     component: resolve => require(['../components/page/EachMonthConsumeList.vue'], resolve), //新增消费
                 },{
                     path: '/friendList',
-                    component: resolve => require(['../components/page/FriendList.vue'], resolve), //新增消费
+                    component: resolve => require(['../components/page/UserList.vue'], resolve), //新增消费
                 },{
                     path: '/createUser',
                     component: resolve => require(['../components/page/CreateUser.vue'], resolve), //新增联系人
@@ -113,14 +113,6 @@ export default new Router({
         {
             path: '/login',
             component: resolve => require(['../components/page/Login.vue'], resolve)
-        },
-        {
-            path: '/404',
-            component: resolve => require(['../components/page/404.vue'], resolve)
-        },
-        {
-            path: '/403',
-            component: resolve => require(['../components/page/403.vue'], resolve)
         },
         {
             path: '*',

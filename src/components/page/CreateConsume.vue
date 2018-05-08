@@ -79,7 +79,7 @@
             },
             createConsume(form) {
                 let newForm ={
-                    fee: form.fee * 100,
+                    fee: -(form.fee * 100),
                     platformId: form.platformId,
                     remark: form.remark
                 };

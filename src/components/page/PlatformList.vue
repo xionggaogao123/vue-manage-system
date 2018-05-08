@@ -26,7 +26,6 @@
                     <el-button size="small"  @click="addIncome(scope.row.id)">添加昨日收益</el-button>
                     <el-button size="small"  @click="handleEditPlatform(scope.row.id, scope.$index, scope.row)">编辑</el-button>
                     <el-button size="small" type="danger" @click="handleDelete(scope.row.id)">删除</el-button>
-
                 </template>
             </el-table-column>
         </el-table>
@@ -55,7 +54,6 @@
                 tableData: [],
                 name: '',
                 totalBalance: '',
-
                 createTime: '',
                 incomeReturn: '',
                 monthReturn: '',

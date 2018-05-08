@@ -6,35 +6,9 @@
                 <el-breadcrumb-item>投资记录管理</el-breadcrumb-item>
             </el-breadcrumb>
         </div>
-
-        <div class="handle-box-search">
-            <el-select v-model="industry" placeholder="选择行业" class="handle-select mr10">
-                <el-option key="0" value="">--请选择--</el-option>
-                <el-option key="1" label="理财" value="1">理财</el-option>
-                <el-option key="2" label="游戏" value="2">游戏</el-option>
-            </el-select>
-
-            <el-select v-model="type" placeholder="选择类型" class="handle-select mr10">
-                <el-option key="0" value="">--请选择--</el-option>
-                <el-option key="1" label="截图" value="1">截图</el-option>
-                <el-option key="2" label="下载" value="2">下载</el-option>
-            </el-select>
-
-            <el-select v-model="status" placeholder="选择状态" class="handle-select mr10">
-                <el-option key="0" value="">--请选择--</el-option>
-                <el-option key="1" label="未开始" value="0">未开始</el-option>
-                <el-option key="2" label="正在进行中" value="1">正在进行中</el-option>
-                <el-option key="3" label="已结束" value="2">已结束</el-option>
-            </el-select>
-
-            <el-button type="primary" icon="search" @click="searchTask()">搜索</el-button>
-        </div>
-
         <div class="handle-box">
-
             <el-button type="primary" icon="add" @click="handleAddInvest()">新增投资计划</el-button>
         </div>
-
         <el-table :data="data" border style="width: 100%" ref="multipleTable">
             <el-table-column type="selection" width="55"></el-table-column>
             <el-table-column prop="platformName" label="平台名称" width="100"></el-table-column>
@@ -66,6 +40,7 @@
 
 <script>
     import {investList} from '../../api/getData';
+    import ElHeader from "../../../node_modules/element-ui/packages/header/src/main.vue";
 
     export default {
         data() {
@@ -90,7 +65,7 @@
             }
         },
         created() {
-            this.getInvestListData(this.industry, this.type, this.status);
+            this.investList();
         },
         computed: {
             data() {
@@ -99,7 +74,7 @@
             }
         },
         methods: {
-            getInvestListData() {
+            investList() {
                 let self = this;
                 this.is_search = true;
                 let enumStatus = {0: "未开始", 1: "进行中", 2: "已结束"};
@@ -111,7 +86,6 @@
                     status: self.status
                 };
                 investList(params).then((res) => {
-                    console.log(res.data);
                     res.data.result.data.forEach(function (element) {
                         element.money = element.money / 100 + "元";
                         element.day = element.day  + "天";
@@ -124,20 +98,13 @@
                     self.total_count = res.data.result.total;
                 });
             },
-
             handleAddInvest() {
                 const self = this;
                 self.$router.push({path: '/createInvest'})
             },
-            handleDelete(taskid) {
-                deleteTask(taskid).then((res) => {
-                    console.log(res);
-                    this.getInvestListData();
-                });
-            },
             handleCurrentChange(val) {
                 this.cur_page = val;
-                this.getInvestListData();
+                this.investList();
             }
         }
     }
@@ -148,10 +115,5 @@
     .handle-box {
         margin-bottom: 20px;
         float: right;
-    }
-
-    .handle-box-search {
-        margin-bottom: 20px;
-        float: left;
     }
 </style>

@@ -62,11 +62,10 @@
             }
         },
         mounted() {
-            this.getAllPlatformData();
+
         },
 
         created() {
-            this.getData();
 
         },
         methods: {

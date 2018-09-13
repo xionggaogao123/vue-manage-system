@@ -76,6 +76,19 @@
                                 title: '资金链路'
                             }
                         ]
+                    }, {
+                        icon: 'el-icon-date',
+                        index: 'table2',
+                        title: '数据分析',
+                        subs: [
+                            {
+                                index: 'friendList',
+                                title: '假标项目'
+                            }, {
+                                index: 'friendList',
+                                title: '真实项目'
+                            }
+                        ]
                     }
                 ]
             }

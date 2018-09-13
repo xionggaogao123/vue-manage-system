@@ -33,34 +33,47 @@
                     {
                         icon: 'el-icon-setting',
                         index: 'dashboard',
-                        title: '系统首页'
+                        title: '系统公告栏'
                     },
                     {
                         icon: 'el-icon-tickets',
                         index: 'table',
-                        title: '投资管理',
+                        title: '出借人信息登记中心',
                         subs: [
                             {
                                 index: 'investList',
-                                title: '投资列表'
+                                title: '我的出借记录'
                             },
                             {
                                 index: 'platformList',
-                                title: '理财平台'
-                            },{
-                                index: 'consumeList',
-                                title: `消费`
+                                title: '出借人合同统计'
                             }
                         ]
                     },
                     {
                         icon: 'el-icon-date',
                         index: 'table2',
-                        title: '人脉管理',
+                        title: '还款人信息中心',
                         subs: [
                             {
                                 index: 'friendList',
-                                title: '好友列表'
+                                title: '真实借款人信息统计'
+                            }, {
+                                index: 'friendList',
+                                title: '资金链路'
+                            }
+                        ]
+                    }, {
+                        icon: 'el-icon-date',
+                        index: 'table2',
+                        title: '数据统计',
+                        subs: [
+                            {
+                                index: 'friendList',
+                                title: '真实借款人信息统计'
+                            }, {
+                                index: 'friendList',
+                                title: '资金链路'
                             }
                         ]
                     }
